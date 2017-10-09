@@ -1,4 +1,3 @@
-dictionary = ["below", "down", "go", "going", "horn", "how", "howdy", "it", "i", "low", "own", "part", "partner", "sit"]
 williamWords = ["the", "of", "and", "to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
 
 
@@ -42,6 +41,8 @@ def get_file_as_string(filename)
   return data
 end
 
+# pour tester on prend un truc un peu plus léger ...
+# puts jean_michel_data(williamWords, get_file_as_string("shake-temp.txt"))
 
 puts jean_michel_data(williamWords, get_file_as_string("shakespear.txt"))
 
