@@ -11,7 +11,7 @@ hash_keys = JSON.parse(file)
 
 
 # send a tweet with command line
-# @client.update('Mon 1er tweet en ligne de commande ... (test)')
+# @client.update('Mon 1er tweet en ligne de commande ... (test)')x
 def write(content)
   @client.update(content)  
 end
