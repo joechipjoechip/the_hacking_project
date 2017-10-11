@@ -12,9 +12,6 @@ hash_keys = JSON.parse(file)
 
 @tweet_nb_limit = 10
 
-
-# send a tweet with command line
-# @client.update('Mon 1er tweet en ligne de commande ... (test)')
 def write(content)
   @client.update(content)  
 end
@@ -27,16 +24,11 @@ def launch_stream(keyword)
 
   if keyword.match(/\s/)
     keyword = keyword.gsub(/\s/, ' AND ')
-    # binding.pry
   end
 
-  
-  # f.write("1234567890")     #=> 10
   output.write('{ 
   "output" :
     [')
-  
-
   
   @stream.filter(:track => keyword) do |tweet|
       if tweet.is_a?(Twitter::Tweet)
@@ -45,7 +37,6 @@ def launch_stream(keyword)
         text = tweet.text.to_s
 
         text = text.gsub('"', "'")
-
         text = text.gsub(/\n|\r/, "--")
 
         # un ptit retour console histoire de voir
@@ -62,13 +53,10 @@ def launch_stream(keyword)
       }'
 
         if i < @tweet_nb_limit
-          
           if i != @tweet_nb_limit - 1
             line = line + ','
           end
-
           output.write(line)
-
         else
           close_output(output)
         end
@@ -93,8 +81,6 @@ def close_output(monFile)
   #   puts "si qq1 a une solution .."
 
 end
-
-
 
 puts "Quelle recherche ? (plusieurs mots : possible, séparés par un espace"
 # keyword = gets.chomp.to_s
