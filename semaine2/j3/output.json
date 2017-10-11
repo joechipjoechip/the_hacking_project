@@ -1,45 +1,36 @@
 { 
-  "output" :
-    [
-      {
-        "name" : "BartgisLaurette",
-        "tweet" : "RT @ArentUSarah: W/ a shout-out to the #Packers, no less - LOVE @Eminem for this #FistUp https://t.co/3oXo82FsvJ"
-      },
-      {
-        "name" : "7brdgesroad",
-        "tweet" : "@Kaepernick7 @Eminem I'm a 56 yr old white female- working class from the south. Cried my eyes out while watching t… https://t.co/9Qtvpxfv0E"
-      },
-      {
-        "name" : "ThirdEyeChief",
-        "tweet" : "RT @andylassner: Not totally sure how rap battles work, but I believe Eminem is now the President of the United States of America."
-      },
-      {
-        "name" : "AsherJ3three",
-        "tweet" : "#Eminem"
-      },
-      {
-        "name" : "angelaleeh",
-        "tweet" : "RT @okMute: Eminem going off on Trump 😳😯🔥 https://t.co/8oTjJhNgoD"
-      },
-      {
-        "name" : "kemper4life",
-        "tweet" : "RT @Eminem: You're going to want to tune into @BET tonight. #HipHopAwards 8pm ET https://t.co/rapIgJzCtL"
-      },
-      {
-        "name" : "TopPortlandNow",
-        "tweet" : "Colin Kaepernick, LeBron James respond to Eminem's rap on Donald Trump https://t.co/zvT05jDCUm"
-      },
-      {
-        "name" : "MadStylee619",
-        "tweet" : "@BET @Eminem Your F**ķjjjng dumb Skittles I mean mnm"
-      },
-      {
-        "name" : "djolder",
-        "tweet" : "RT @desusnice: #PEAK https://t.co/pXX87JF2OY"
-      },
-      {
-        "name" : "pablolan3",
-        "tweet" : "RT @anthonyjeselnik: I still can't tell if Eminem likes Donald Trump more or less than his own mother."
-      }
-    ]
-  }
+  "output" : [
+    {
+      "name" : "erniedannydavis",
+      "tweet" : "RT @TheEllenShow: I ❤️ @Eminem."
+    },
+    {
+      "name" : "WillSuggs3",
+      "tweet" : "@JT_Antonini @Dihaggis @Variety @Eminem @realDonaldTrump Obumer was a fine piece of work glad that thing is out of office"
+    },
+    {
+      "name" : "kiddambitionrap",
+      "tweet" : "RT @Eminem: 'The Storm' (Freestyle) https://t.co/QLPjtgS5n3"
+    },
+    {
+      "name" : "MoomaCat",
+      "tweet" : "RT @Kaepernick7: I appreciate you @Eminem ✊🏾 https://t.co/nwavBwsOkQ"
+    },
+    {
+      "name" : "smgrey_",
+      "tweet" : "RT @OnlyHipHopFacts: Eminem ethers Donald Trump in his BET Cypher. https://t.co/tsll4uop0G"
+    },
+    {
+      "name" : "SONYAEelise",
+      "tweet" : ". @eminem got me in my feelings, been in my bag! #RUNUP get done up 🔫✊🏾 https://t.co/5X0p4Ckc8L https://t.co/9Fy4Wzyuyb"
+    },
+    {
+      "name" : "MariyaMathers",
+      "tweet" : "RT @Eminem: 'The Storm' (Freestyle) https://t.co/QLPjtgS5n3"
+    },
+    {
+      "name" : "neo_riche",
+      "tweet" : "RT @PardesSeleh: You'd rather hear a white guy fake rap about how everybody's a racist over decades of black guys rapping? Strange https://…"
+    }
+  ]
+}
