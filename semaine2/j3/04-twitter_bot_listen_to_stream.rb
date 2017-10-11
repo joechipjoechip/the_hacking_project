@@ -56,14 +56,14 @@ def stream_process(keyword, output, i)
   end
 end
 
-def close_file(monFile)
+def close_file(myFile)
 
   closing_stuffs = "
   ]
 }"
 
-  monFile.write(closing_stuffs)
-  monFile.close
+  myFile.write(closing_stuffs)
+  myFile.close
 end
 
 def write_in_file(file, user, text, i)
@@ -90,10 +90,10 @@ def show_console(user, text, i)
 end
 
 # Start script !
-puts "Quelle recherche ? (plusieurs mots : possible, séparés par un espace)"
+puts "Keyword(s) ?? (if several : separated by space)"
 keyword = gets.chomp.to_s
 
-puts "Combien de résultats max ?"
+puts "How many results ? [integer]"
 @tweet_nb_limit = gets.chomp.to_i
 
 if keyword && @tweet_nb_limit
