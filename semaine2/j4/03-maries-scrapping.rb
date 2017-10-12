@@ -38,6 +38,7 @@ end
 
 
 def go_to_this_mairie(nom, lien)
+
   lien = lien.gsub('./', '')
   url_mairie = "#{@url_de_base}#{lien}"
   page_mairie = Nokogiri::HTML(RestClient.get(url_mairie))
@@ -52,14 +53,6 @@ def go_to_this_mairie(nom, lien)
   # Obligé de faire ces opérations chelous pour pouvoir se débarasser du &nbsp;
   email = remove_this_fucking_whitespace(email)
   referent = remove_this_fucking_whitespace(referent)
-
-  if email.nil?
-    email = "email manquant"
-  end
-
-  if referent.nil?
-    referent = "référent manquant"
-  end
 
   dat_mairie = { 
     :email => email,
@@ -79,11 +72,11 @@ def tri_dat_datas(recup)
   referent = ""
 
   recup.each do |elem|
-    if elem.children.text.force_encoding('ISO-8859-1').encode("UTF-8").match(/@/)
+    if /@/.match(elem.children.text.force_encoding('ISO-8859-1').encode("UTF-8"))
       email = elem.children.text
     end
 
-    if elem.children.text.force_encoding('ISO-8859-1').encode("UTF-8").match(/Monsieur|Madame/)
+    if /Monsieur|Madame/.match(elem.children.text.force_encoding('ISO-8859-1').encode("UTF-8"))
       referent = elem.children.text
     end
   end
@@ -91,10 +84,6 @@ def tri_dat_datas(recup)
   tabResult = [email, referent]
 
   return tabResult
-
-  rescue => e
-    puts "mini crash"
-
 end
 
 
