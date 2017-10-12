@@ -1,19 +1,13 @@
-# require 'rubygems'
 require 'nokogiri'
-# require 'open-uri'
 require 'rest-client'
 require 'pry'
-require 'csv'
 require 'json'
 
-# variables 
+# variables globales
 @url_de_base = "http://annuaire-des-mairies.com/"
 @selector = "p.Style22 > font"
 
-
-# we want only links
-# links = page.css('body a.interlanguage')
-
+# Functions
 def store_link_to_mairie
   url_valdoise = "#{@url_de_base}val-d-oise.html"
   page = Nokogiri::HTML(RestClient.get(url_valdoise))
@@ -76,8 +70,8 @@ def go_to_this_mairie(nom, lien)
     puts "Pb d'encodage, mais on continue le programme car ça ne change rien dans notre cas"
 
   return dat_mairie
-
 end
+
 
 def tri_dat_datas(recup)
 
@@ -103,6 +97,7 @@ def tri_dat_datas(recup)
 
 end
 
+
 def remove_this_fucking_whitespace(chaine)
   chaine = chaine.split('')
   chaine.shift
@@ -110,7 +105,8 @@ def remove_this_fucking_whitespace(chaine)
   return chaine
 end
 
-# binding.pry
+
+# Starting !
 bigHash = store_link_to_mairie
 bigJson = JSON.pretty_generate(bigHash)
 
