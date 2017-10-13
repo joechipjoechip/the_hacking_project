@@ -11,7 +11,7 @@ require 'pry'
 puts ("Tell the refresh rate you want (secondes [integer])")
 @refresh_rate = gets.chomp.to_i
 
-puts ("Tell how many times maximum (iteration numer [integer])")
+puts ("Tell how many times maximum (iteration number [integer])")
 @refresh_limit = gets.chomp.to_i
 
 
