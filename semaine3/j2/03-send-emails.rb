@@ -55,3 +55,6 @@ puts gmail.inbox.count(:read)
 # un scrap qui pécho -toutes- les mairies de France (19660 adresses mails à peu près)
 # donc jsuis chaud bouillant, mais là, jpeux pas faire sauter ces sécrutités là
 # j'ai la banque, les coins, etc.. toute ma vie la dessus.
+
+# promis jferais mieux la prochaine fois ;)
+# bisoux :)
