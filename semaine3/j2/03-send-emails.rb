@@ -2,59 +2,38 @@ require 'json'
 require 'gmail'
 require 'pry'
 require 'mail'
-require 'gmail_xoauth'
 
-mdp = File.read('mdp.json')
-mdp = JSON.parse(mdp)
-# mdp = mdp["user1"]
-mdp = "xxxxxxx"
-username = "xxxxxxxx"
+file = File.read('sensible.json')
+file = JSON.parse(file)
 
-
-
-gmail = Gmail.connect(:xoauth2, "xxxxxxxx@gmail.com", token)
-puts gmail.inbox.count(:read)
+mdp = file["p"]
+username = file["l"]
 
 
 
+Gmail.connect(username, mdp) do |gmail|
 
-# Gmail.connect(username, mdp) do |gmail|
-#   puts gmail.inbox.count(:read)
-#   # binding.pry  
-# end
+  email = gmail.compose do
+    to "quituveux@hotmail.fr"
+    subject "Hey Boiii, ceci est un test"
 
-# truc = Gmail.new("joechipjoechip", mdp)
+    # plain text way
+    # body "Ceci est le corps du message, jeune pousse"
 
-# gmail = Gmail.connect(username, mdp)
-# # play with your gmail...
-# puts gmail
-# puts gmail.inbox.count(:read)
+    # html way
+    html_part do
+      content_type 'text/html; charset=UTF-8'
+      body "<p>Corps du <em>mail</em> au format <h2>HTML</h2>.</p>"
+    end
 
-# gmail.logout
+    # pj
+    add_file "testpj.png"
+  end
 
-
-
-# moults essais pour arriver à :
-# Ok donc après lecture des threads du slack, visiblement il faut autoriser
-# son propre gmail à accepter les connexions à des applications non sécurisés
-
-# mon adresse gmail étant à la fois mon adresse perso, et mon adresse buisness, 
-# j'ai l'authentification à deux facteurs activées
-# donc il faudrait que : je désactive la F2A, pour désactiver encore une autre sécurité
-# pour me rendre ultra vulnérable "juste le temps de l'exo"
-
-# désolé mais nope, trop sensible ce qu'il y a là dessus,
-# créer une adresse spéciale pour l'exo ? et la voir éternellement liée à la mienne ?... nope again.
+  email.deliver!
 
 
-# donc ok, je voyais le principe, c'est cool, y a plein de trucs à faire, 
-# un des ces 4, je prendrais le temps pour me pencher là dessus, mais là j'ai pas l'temps.
+end
 
 
-# désolé, c'est pas de la mauvaise volonté, y a qu'à voir, jme suis chauffer pour faire 
-# un scrap qui pécho -toutes- les mairies de France (19660 adresses mails à peu près)
-# donc jsuis chaud bouillant, mais là, jpeux pas faire sauter ces sécrutités là
-# j'ai la banque, les coins, etc.. toute ma vie la dessus.
 
-# promis jferais mieux la prochaine fois ;)
-# bisoux :)
