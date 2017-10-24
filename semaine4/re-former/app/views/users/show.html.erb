@@ -1,0 +1,10 @@
+<div class="text-center">
+  <h4><%= @user.username %></h4>
+  <p><%= @user.email %></p>
+  <p><%= @user.bio %></p>
+</div>
+
+<div class="text-center">
+  <a href="<%= edit_user_path(@user.id) %>" class="btn btn-outline-warning">Editer l'user</a>
+  <a href="<%= users_path %>" class="btn btn-outline-dark">Retour à la liste</a>
+</div>

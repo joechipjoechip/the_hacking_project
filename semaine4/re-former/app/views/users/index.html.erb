@@ -1,0 +1,13 @@
+<h1>Listing Users</h1>
+<div style="text-align: center;">
+  <% @users.each do |user| %>
+    <h4><%= user.username %></h4>
+
+    <a href="<%= user_path(user.id) %>" class="btn btn-outline-primary">Voir le profil</a>
+    <a href="<%= edit_user_path(user.id) %>" class="btn btn-outline-warning">Editer le profil</a>
+    <a href="<%= user_path(user.id) %>" class="btn btn-outline-danger" data-confirm="êtes vous sur ?!" data-method="DELETE">Supprimer le profil</a>
+    <hr>
+  <% end %>
+
+  <a href="<%= new_user_path %>" class="btn btn-outline-success">Créer un nouveau user !</a>
+</div>

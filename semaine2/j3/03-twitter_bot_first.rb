@@ -93,8 +93,8 @@ my_actions = {
   :favorite => false
 }
 
-search_with_options_and_action('Mélenchon', my_options, 10, my_actions, "Mélenchon for the win, boiiiiiii", true)
-
+# search_with_options_and_action('Mélenchon', my_options, 10, my_actions, "Mélenchon for the win, boiiiiiii", true)
+search('deliveroo code promo', 10000, true)
 # -----
 
 

@@ -1,0 +1,20 @@
+<h1>Salut ! Moi c'est <%= @name %></h1>
+
+<% if @name == 'Alice' %>
+  <h2>Depuis toute petite, je me sens spé</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum libero nisi dolore hic perferendis fuga eaque tempora culpa, voluptate magni rem cum repellendus, ullam doloremque corrupti distinctio dolorem quaerat voluptates!</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cumque deleniti quaerat, magni tenetur. Quam cum debitis distinctio voluptatibus quo alias numquam, laborum, vel magnam voluptate nobis dolorum perspiciatis consequatur!</p>
+
+  <%= link_to 'Mon collègue Bob', about_bob_path %>
+<% end %>
+
+<% if @name == 'Bob' %>
+  <h3>Demain, je serai gardien de la paix</h3>
+  <p>Car l'odre publique est ma principale priorité prépondérante principale</p>
+
+  <img src="https://i.skyrock.net/8017/27748017/pics/989571440_small.jpg" alt="moi">
+
+  <%= link_to 'Ma collègue Alice', about_alice_path %>
+<% end %>
+
+

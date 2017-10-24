@@ -1,0 +1,29 @@
+<h2>Editer un user</h2>
+
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <label>Username</label>
+    <%= f.text_field :username, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Bio</label>
+    <%= f.text_area :bio, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Update", class: 'btn btn-outline-primary' %>
+  </div>
+  
+<% end %>
+
+
+
+
+
+<a href="<%= users_path %>" class="btn btn-outline-dark">Retour à la liste</a>
