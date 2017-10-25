@@ -1,0 +1,20 @@
+<div class="text-center">
+  <% @gossips.each do |oneGossip| %>
+  <div style="width:30%; min-height: 250px; margin-bottom: 20px; display: inline-block; border: 1px solid rgba(0,0,0,0.1); border-radius: 20px; vertical-align: middle; padding : 20px;">
+    <h4>"<%= oneGossip.content %>"</h4>
+    <p class="font-italic"><%= oneGossip.anonymous_author %></p>
+    <a href="<%= gossip_path(oneGossip.id) %>" class="btn btn-primary"><small>See fullscreen</small></a>
+    <a href="<%= edit_gossip_path(oneGossip.id) %>" class="btn btn-warning"><small>Edit this shit</small></a>
+    <a href="<%= gossip_path(oneGossip.id) %>" class="btn btn-danger" data-confirm="sure ?" data-method="DELETE"><small>Destroy this shit</small></a>
+  </div>
+  <% end %>
+
+
+
+
+  <div style="width:30%; min-height: 250px; margin-bottom: 20px; display: inline-block; border: 1px solid rgba(0,0,0,0.1); border-radius: 20px; vertical-align: middle; padding : 20px;">
+    <h5>Wanna participate to this pitoyable digital journey !?</h5>
+    <a href="<%= new_gossip_path %>" class="btn btn-success">Write your own médisance NOW !</a>
+  </div>
+  
+</div>

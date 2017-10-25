@@ -1,0 +1,8 @@
+<div class="text-center" style="margin-top: 60px;">
+  <h3 style="color:orange;">" <%= @gossip.content %> "</h3>
+  <p class="font-italic"><%= @gossip.anonymous_author %></p>
+
+  <a href="<%= edit_gossip_path(@gossip.id) %>" class="btn btn-warning">Edit</a>
+  <a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="sur ?" data-method="DELETE">Delete</a>
+  <a href="<%= root_url %>" class="btn btn-dark">Back to all gossips</a>
+</div>

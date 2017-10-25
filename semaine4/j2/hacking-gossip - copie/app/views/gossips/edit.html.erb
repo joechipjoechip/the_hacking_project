@@ -1,0 +1,22 @@
+<div class="text-center" style="max-width: 650px; margin: 0 auto;">
+  <h2>Edit it</h2>
+
+
+  <%= form_for @goss do |f| %>
+  <div class="form-group" style="margin-top:60px;">
+    <label>Poison</label>
+    <%= f.text_area :content, class: "form-control text-center" %>
+  </div>
+
+  <div class="form-group">
+    <label>Name</label>
+    <%= f.text_field :anonymous_author, class: "form-control text-center" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Ok, that's better like dis", class: "btn btn-outline-success" %>
+  </div>
+
+  <% end %>
+</div>
+

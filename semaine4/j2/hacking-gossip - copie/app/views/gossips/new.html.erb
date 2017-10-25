@@ -1,0 +1,23 @@
+<div class="text-center" style="max-width: 650px; margin: 0 auto;">
+  <h2>Create Your Own Gossip</h2>
+  <h5>U little bitch</h5>
+
+
+  <%= form_for @new_gossip do |f| %>
+  <div class="form-group" style="margin-top:60px;">
+    <label>Write your poison</label>
+    <%= f.text_area :content, class: "form-control text-center" %>
+  </div>
+
+  <div class="form-group">
+    <label>As u can't assume your shitty act ('cause ur a little bitch), please feel free to sign it with a fake name, u cunt ass</label>
+    <%= f.text_field :anonymous_author, class: "form-control text-center" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "10 generations of my descendants will be cursed for that, but let me do", class: "btn btn-outline-success" %>
+  </div>
+
+  <% end %>
+</div>
+
