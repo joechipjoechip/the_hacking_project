@@ -1,0 +1,2 @@
+module TeachsHelper
+end
