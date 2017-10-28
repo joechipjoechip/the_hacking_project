@@ -1,0 +1,26 @@
+<h2>Create a new Mousaillon !</h2>
+<div style="max-width: 550px; margin:0 auto;">
+  <%= form_for @new_mousaillon do |f| %>
+
+    <div class="form-group">
+      <label>User name :</label>
+      <%= f.text_field :username, class:"form-control text-center" %>
+    </div>
+
+    <div class="form-group">
+      <label>Email :</label>
+      <%= f.text_field :email, class:"form-control text-center" %>
+    </div>
+
+    <div class="form-group">
+      <label>Bio :</label>
+      <%= f.text_area :bio, class:"form-control text-center" %>
+    </div>
+
+    <div class="form-group">
+      <label></label>
+      <%= f.submit "Ok !", class:"btn btn-outline-success" %>
+    </div>
+
+  <% end %>
+</div>

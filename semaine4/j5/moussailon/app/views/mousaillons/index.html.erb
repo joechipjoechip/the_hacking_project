@@ -1,0 +1,10 @@
+<% @mousaillons.each do |mous| %>
+  <h1><%= mous.username %></h1>
+  <h3><%= mous.email %></h3>
+
+  <%= link_to "Voir", mousaillon_path(mous.id), class: "btn btn-outline-primary" %>
+  <%= link_to "Editer", edit_mousaillon_path(mous.id), class: "btn btn-outline-warning" %>
+  <%= link_to "Supprimer", mousaillon_path(mous.id), class: "btn btn-outline-danger", method: "delete" %>
+
+  <hr>
+<% end %>

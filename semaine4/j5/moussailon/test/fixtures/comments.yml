@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mousaillon_id: 1
+  gossip_id: 1
+  body: MyText
+
+two:
+  mousaillon_id: 1
+  gossip_id: 1
+  body: MyText

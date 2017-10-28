@@ -1,0 +1,39 @@
+<div class="row" style="margin-bottom:90px;">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-4">
+    <h2><%= @mousaillon.username %></h2>
+    <h5><%= @mousaillon.email %></h5>
+    <p><%= @mousaillon.bio %></p>
+  </div>
+
+  <div class="col-lg-5">
+    <h2>Gossips from <%= @mousaillon.username %> :</h2>
+    <hr>
+    <% @his_gossips.each do |goss| %>
+      <h5>" <%= goss.body %> "</h5>
+      <p class="font-italic" style="font-size:10px; color: grey;"> <%= goss.created_at %> </p>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <%= render :partial => 'partials/comments', :locals => {:goss => goss}%>
+        </div>
+        <div class="col-lg-4">
+          <%= link_to "Voir la rumeur", gossip_path(goss.id), class:"btn btn-outline-primary" %>
+        </div>
+        <div class="col-lg-4">
+          
+        </div>
+      </div>
+      
+      <hr>
+    <% end %>
+  </div>
+  <div class="col-lg-2"></div>
+</div>
+
+
+
+<hr>
+<%= link_to "Ecrire une rumeur", {:controller => "gossips", :action => "new", :mous_id => @mousaillon.id } %>
+<hr>
+<%= link_to "Retour à la liste des mousaillons", mousaillons_path, class: "btn btn-outline-dark" %>

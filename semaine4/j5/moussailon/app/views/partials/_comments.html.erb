@@ -1,0 +1,7 @@
+<% if @allCom.where(:gossip_id => goss.id).count == 0 %>
+  <p style="font-size:10px;">0 comment</p>
+<% elsif @allCom.where(:gossip_id => goss.id).count == 1 %>
+  <a href="<%= gossip_path(goss.id) %>">1 comment</a>
+<% elsif @allCom.where(:gossip_id => goss.id).count > 1 %>
+  <a href="<%= gossip_path(goss.id) %>"><%= @allCom.where(:gossip_id => goss.id).count %> comments</a>
+<% end %>

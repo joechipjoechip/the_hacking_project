@@ -1,0 +1,71 @@
+<p class="font-italic">id : <%= @gossip.mousaillon_id %></p>
+<h4><%= @allMous.find_by(id:@gossip.mousaillon_id).username %></h4>
+
+<h3 style="color:orange;">" <%= @gossip.body %> "</h3>
+
+<p style="font-size: 10px; padding-bottom:60px;"><%= @gossip.created_at %></p>
+
+<hr>
+<%= link_to "Editer ce gossip", edit_gossip_path(@gossip.id), class:"btn btn-warning" %>
+<%= link_to "Voir Mousaillon à l'origine", mousaillon_path(@gossip.mousaillon_id), class:"btn btn-primary" %>
+<hr>
+<%= link_to "Retour à la liste des gossips", gossips_path, class:"btn btn-dark" %>
+
+
+
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <hr>
+      <hr>
+      <h2>Comments :</h2>
+
+      <% @all_comments_of_this_gossip.each do |com| %>
+        <p class="text-joli-bleu" style="font-size: 20px;">" <%= com.body %> "</p>
+        <p class="font-italic" style="color: grey;"><span style="font-size:10px;">from</span> <%= @allMous.find_by(:id => com.mousaillon_id).username %></p>
+        <p style="font-size: 10px;"><%= com.created_at %></p>
+        <hr>
+      <% end %>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+<hr>
+<div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10">
+    <h5>Leave a comment</h5>
+    <div style="max-width: 550px; margin:0 auto;">
+      <%= form_for @new_comment do |f| %>
+        
+        <%= hidden_field_tag('mous_key', @gossip.mousaillon_id) %>
+        <%= hidden_field_tag('goss_key', @gossip.id) %>
+        <div class="form-group">
+          <label>Body :</label>
+          <%= f.text_area :body, class:"form-control text-center" %>
+        </div>
+
+        <div class="form-group">
+          <label>Who are u ?</label>
+          <select name="comment_come_from">
+            <% @allMous.each do |mous| %>
+              <option value="<%= mous.id %>"><%= mous.username %></option>
+            <% end %>  
+          </select>
+
+
+        </div>
+
+        <div class="form-group">
+          <label></label>
+          <%= f.submit "Publish dat !", class:"btn btn-outline-success" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-1"></div>
+</div>
+
+
+
+
