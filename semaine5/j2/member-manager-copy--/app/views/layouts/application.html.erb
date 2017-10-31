@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MemberManager</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+
+    <%= render 'layouts/header' %>
+
+    <h2 class="text-center" style="padding-top:30px;"><%= yield :title %></h2>
+
+    <% flash.each do |key, value| %>
+      <%= content_tag :div, value, class: "flash #{key}" %>
+    <% end %>
+
+    <div class="container-fluid text-center" style="padding-top:40px;">
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+          <%= yield %>    
+        </div>
+        <div class="col-lg-2"></div>
+      </div>
+      
+    </div>
+
+    <%= debug(params) if Rails.env.development? %>
+  </body>
+</html>
